@@ -1,11 +1,13 @@
+const main = document.querySelector("main");
+
 let cards = new Array();
 
 function loadCards() {
 	let cardCount = 1;
 
 	for(let i = 0; i < 16; i += 2) {
-		cards[i] = "img"+cardCount+".svg";
-		cards[i+1] = "img"+cardCount+".svg";
+		cards[i] = "background-image: url('./imgs/img"+cardCount+".svg');";
+		cards[i+1] = "background-image: url('./imgs/img"+cardCount+".svg');";
 		cardCount++;
 	}
 
@@ -26,6 +28,11 @@ function shuffleCards() {
 
 loadCards();
 
+main.addEventListener("click", function(event) {
 
+	const elem = event.target;
+	const row = elem.id.split("_");
+	elem.style.cssText = cards[row[1]-1];
+});
 
 
