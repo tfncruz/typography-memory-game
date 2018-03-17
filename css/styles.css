@@ -18,7 +18,7 @@ main {
 	min-height: 25%;
 }
 
-.card {
+.card-container {
 	background-color: #ccffff;
 	margin: 1vw;
 	width: calc(25% - 2vw);
