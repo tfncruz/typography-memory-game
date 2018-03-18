@@ -5,6 +5,7 @@ const resetBtn = document.querySelector("#reset-btn");
 const timer = document.querySelector("#timer");
 let seconds = 0;
 let minutes = 0;
+
 // update timer every 1 second
 let timerIntervalID = setInterval(updateTimer, 1000);
 
@@ -13,6 +14,9 @@ let cardSelected1;
 let cardSelected2;
 let noMatch = false;
 let cardsFound = 0;
+
+const moveCounter = document.querySelector("#move-counter");
+let moves = 0;
 
 /*
 * Load cards array with cards (css class)
@@ -112,7 +116,19 @@ function resetGame() {
 		}
 	}
 
+	moveCounter = 0;
+
 	loadCards();
+}
+
+/*
+* update move counter
+*/
+function updateMoveCounter() {
+	++moves;
+	if(moves < 10) moveCounter.innerHTML = "00"+moves;
+	else if(moves > 9 && moves < 100) moveCounter.innerHTML = "0"+moves;
+	else moveCounter.innerHTML = moves;
 }
 
 // load the cards array with the images
@@ -134,7 +150,11 @@ main.addEventListener("click", function(event) {
 		element.classList.toggle("back");
 
 		if(cardSelected1 === undefined) { cardSelected1 = element; }
-		else { cardSelected2 = element; }
+		else {
+			cardSelected2 = element;
+			// 2 clicks equals 1 move
+			updateMoveCounter();
+		}
 
 		// if ref1 and ref2
 		if(cardSelected1 !== undefined && cardSelected2 !== undefined) {
