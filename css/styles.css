@@ -10,7 +10,7 @@ header {
 	width: 100vw;
     max-width: 800px;
     margin: auto;
-    padding: 2em 3px 0 3px;
+    padding: 1em 3px 0 3px;
 }
 
 main {
@@ -88,7 +88,20 @@ h1 { color: #404040; }
 
 #time-spent, #moves-spent { display: inline; }
 
-/* play-again-btn generated with http://css3buttongenerator.com/ */
+/* play-again-btn and reset-btn generated with http://css3buttongenerator.com/ */
+#reset-btn {
+  color: #ffffff;
+  font-size: 10px;
+  background: #cecece;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+#reset-btn:hover {
+  background: #fc6f3c;
+  text-decoration: none;
+}
+
 #play-again-btn {
   -webkit-border-radius: 11;
   -moz-border-radius: 11;
