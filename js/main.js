@@ -118,7 +118,8 @@ function resetGame() {
 		}
 	}
 
-	moveCounter = 0;
+	moves = 0;
+	moveCounter.innerHTML = "000";
 	stars.innerHTML = "***";
 
 	loadCards();
