@@ -1,5 +1,8 @@
 const main = document.querySelector("main");
 
+const modalPopup = document.querySelector("#modal-popup");
+const playAgainBtn = document.querySelector("#play-again-btn");
+
 const resetBtn = document.querySelector("#reset-btn");
 
 const timer = document.querySelector("#timer");
@@ -185,7 +188,12 @@ main.addEventListener("click", function(event) {
 		// if cardsFound equals 8, won
 		if(cardsFound === 8) {
 			clearInterval(timerIntervalID);
-			console.log("YOU WON!!!");
+
+			document.querySelector("#time-spent").innerHTML = "in "+timer.innerHTML;
+			document.querySelector("#moves-spent").innerHTML = "with "+moves+" moves";
+			document.querySelector("#stars-rating").innerHTML = stars.innerHTML;
+
+			modalPopup.classList.toggle("hidden");
 		}
 	}
 });
@@ -195,5 +203,9 @@ resetBtn.addEventListener("click", function(event) {
 	resetGame();
 });
 
+playAgainBtn.addEventListener("click", function(event) {
+	modalPopup.classList.toggle("hidden");
+	resetGame();
+});
 
 

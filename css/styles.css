@@ -23,9 +23,13 @@ main {
     margin: auto;
 }
 
+h1 { color: #404040; }
+
 #timer, #move-counter, #stars {
 	display: inline;
 }
+
+.hidden { display: none; }
 
 .row {
 	display: flex;
@@ -63,8 +67,7 @@ main {
 	width: 100vw;
 	height: 100vh;
 	background-color: #ffffff; /* fallback */
-	background-color: rgb(255,255,255,0.4);
-	display: none;
+	background-color: rgba(255,255,255,0.95);
 }
 
 #popup-content {
@@ -73,3 +76,16 @@ main {
 	padding-top: 50%;
 	margin: auto;
 }
+
+#popup-content p {
+	color: #ff9900;
+}
+
+#stars-rating {
+	font-size: 5em;
+	margin-top: 0;
+}
+
+#time-spent, #moves-spent { display: inline; }
+
+#play-again-btn { display: block; margin-top: 1em; }
