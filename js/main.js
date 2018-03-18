@@ -1,11 +1,13 @@
 const main = document.querySelector("main");
 
-const cards = new Array();
+const timer = document.querySelector("#timer");
+let seconds = 0;
+let minutes = 0;
 
+const cards = new Array();
 let cardSelected1;
 let cardSelected2;
 let noMatch = false;
-
 let cardsFound = 0;
 
 /*
@@ -62,8 +64,30 @@ function clearLastTwo() {
 	noMatch = false;
 }
 
+/*
+* manages timer
+*/
+function updateTimer() {
+	let m, s;
+
+	if(seconds < 59) ++seconds;
+	else {
+		++minutes;
+		seconds = 0;
+	}
+
+	if(minutes < 10) m = "0"+minutes;
+	else m = minutes;
+	if(seconds < 10) s = "0"+seconds;
+	else s = seconds;
+
+    timer.innerHTML = m+":"+s;
+}
+
 // load the cards array with the images
 loadCards();
+// update timer every 1 second
+setInterval(updateTimer, 1000);
 
 // -------------------------------------------------- Event listeners and handlers
 main.addEventListener("click", function(event) {
