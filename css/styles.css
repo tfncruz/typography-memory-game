@@ -10,7 +10,14 @@ header {
 	width: 100vw;
     max-width: 800px;
     margin: auto;
-    padding: 1em 3px 0 3px;
+    padding: 1em 3px 0 0.5em;
+}
+
+footer {
+	width: 100vw;
+    max-width: 800px;
+    margin: auto;
+    padding-left: 0.5em;
 }
 
 main {
