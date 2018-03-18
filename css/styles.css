@@ -8,7 +8,7 @@ html, body {
 
 header {
 	width: 100vw;
-    max-width: 800px;
+    max-width: 700px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +21,7 @@ header {
 
 footer {
 	width: 100vw;
-    max-width: 800px;
+    max-width: 700px;
     margin: auto;
     padding-left: 0.5em;
 }
@@ -31,8 +31,8 @@ main {
 	flex-wrap: wrap;
 	width: 100vw;
     height: 100vw;
-    max-width: 800px;
-    max-height: 800px;
+    max-width: 700px;
+    max-height: 700px;
     margin: auto;
 }
 
@@ -103,9 +103,9 @@ h1 { color: #404040; }
 }
 
 #popup-content {
-	width: 50%;
+	width: 33%;
 	height: 50%;
-	padding-top: 25vw;
+	padding-top: 10vw;
 	margin: auto;
 }
 
