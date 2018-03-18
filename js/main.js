@@ -31,16 +31,21 @@ function loadCards() {
 function shuffleImages() {
 
 	let currentIndex = cards.length-1;
+	let index = 15;
 
 	while(currentIndex >= 0) {
 		let tmp = cards[currentIndex];
-		let choice = Math.floor((Math.random() * 16) + 1);
+		let choice = Math.floor((Math.random() * index) + 1);
 		cards[currentIndex] = cards[choice];
 		cards[choice] = tmp;
 		--currentIndex;
+		--index;
 	}
 }
 
+/*
+* clear last two wrong cads
+*/
 function clearLastTwo() {
 	let classes1 = cardSelected1.classList;
 	let classes2 = cardSelected2.classList;
@@ -53,6 +58,7 @@ function clearLastTwo() {
 	cardSelected1 = undefined;
 	cardSelected2 = undefined;
 
+	// allow new click
 	noMatch = false;
 }
 
@@ -64,10 +70,12 @@ main.addEventListener("click", function(event) {
 
 	const element = event.target;
 
-	// if the click was in a available card and cardsFound less than 8
-	if(element.classList.contains("card-container") && element.classList.contains("back") && cardsFound < 8) {
+	// if the click was in a turned available card, cardsFound is less than 8 and is allowed (noMatch false)
+	if(element.classList.contains("card-container") &&
+		element.classList.contains("back") &&
+		cardsFound < 8 && noMatch === false) {
 
-		if(noMatch) { clearLastTwo(); }
+		//if(noMatch) { clearLastTwo(); }
 
 		// turn the card and store a reference to that element in ref1 or ref2
 		const row = event.target.id.split("_");
@@ -84,8 +92,10 @@ main.addEventListener("click", function(event) {
 			classes1 = cardSelected1.classList;
 			classes2 = cardSelected2.classList;
 			if(classes1[1] !== classes2[1]) {
-				// set this to true so that in the next click these two cards are flipped back
+				// prevent new click before timeout finishes
 				noMatch = true;
+				setTimeout(clearLastTwo, 1000);
+
 			} else {
 				++cardsFound;
 				//reset cards selected
