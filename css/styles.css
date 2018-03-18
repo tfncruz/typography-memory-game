@@ -73,7 +73,7 @@ h1 { color: #404040; }
 #popup-content {
 	width: 50%;
 	height: 50%;
-	padding-top: 50%;
+	padding-top: 25vw;
 	margin: auto;
 }
 
