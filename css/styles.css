@@ -23,7 +23,7 @@ main {
     margin: auto;
 }
 
-#timer, #move-counter {
+#timer, #move-counter, #stars {
 	display: inline;
 }
 

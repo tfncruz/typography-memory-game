@@ -18,6 +18,8 @@ let cardsFound = 0;
 const moveCounter = document.querySelector("#move-counter");
 let moves = 0;
 
+const stars = document.querySelector("#stars");
+
 /*
 * Load cards array with cards (css class)
 */
@@ -117,6 +119,7 @@ function resetGame() {
 	}
 
 	moveCounter = 0;
+	stars.innerHTML = "***";
 
 	loadCards();
 }
@@ -126,6 +129,10 @@ function resetGame() {
 */
 function updateMoveCounter() {
 	++moves;
+
+	if(moves > 16) stars.innerHTML = "**";
+	else if(moves > 24) stars.innerHTML = "*";
+
 	if(moves < 10) moveCounter.innerHTML = "00"+moves;
 	else if(moves > 9 && moves < 100) moveCounter.innerHTML = "0"+moves;
 	else moveCounter.innerHTML = moves;
