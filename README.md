@@ -1,10 +1,10 @@
-# TYPOGRAPHY MEMORY GAME
+# TYPOGRAPHIC MEMORY GAME
 
 ### Author
 Tiago Cruz
 
 ### Description
-Typography Memory Game was developed for the Udacity Front-End Nano Degree course (Google Scholarship). The goal was to develop a simple memory game and I choose the Typography theme.
+**Typographic Memory Game** was developed for the Udacity Front-End Nano Degree course (Google Scholarship). The goal was to develop a simple memory game and I choose the Typography theme.
 
 There is no limit of time or moves to complete the game. Although to keep the three stars rating you should finish in less that 16 moves. After that the rating falls to two stars and, after 24 moves, to one star.
 
