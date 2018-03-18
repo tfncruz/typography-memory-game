@@ -87,7 +87,7 @@ function updateTimer() {
 // load the cards array with the images
 loadCards();
 // update timer every 1 second
-setInterval(updateTimer, 1000);
+let timerIntervalID = setInterval(updateTimer, 1000);
 
 // -------------------------------------------------- Event listeners and handlers
 main.addEventListener("click", function(event) {
@@ -130,6 +130,7 @@ main.addEventListener("click", function(event) {
 
 		// if cardsFound equals 8, won
 		if(cardsFound === 8) {
+			clearInterval(timerIntervalID);
 			console.log("YOU WON!!!");
 		}
 	}
