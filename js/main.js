@@ -1,5 +1,7 @@
 const main = document.querySelector("main");
 
+const resetBtn = document.querySelector("#reset-btn");
+
 const timer = document.querySelector("#timer");
 let seconds = 0;
 let minutes = 0;
@@ -84,6 +86,13 @@ function updateTimer() {
     timer.innerHTML = m+":"+s;
 }
 
+/*
+* resets the game
+*/
+function resetGame() {
+
+}
+
 // load the cards array with the images
 loadCards();
 // update timer every 1 second
@@ -135,5 +144,11 @@ main.addEventListener("click", function(event) {
 		}
 	}
 });
+
+resetBtn.addEventListener("click", function(event) {
+	event.preventDefault();
+	resetGame();
+});
+
 
 
