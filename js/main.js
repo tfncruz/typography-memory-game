@@ -5,6 +5,8 @@ const resetBtn = document.querySelector("#reset-btn");
 const timer = document.querySelector("#timer");
 let seconds = 0;
 let minutes = 0;
+// update timer every 1 second
+let timerIntervalID = setInterval(updateTimer, 1000);
 
 const cards = new Array();
 let cardSelected1;
@@ -90,13 +92,31 @@ function updateTimer() {
 * resets the game
 */
 function resetGame() {
+	clearInterval(timerIntervalID);
+	seconds = 0;
+	minutes = 0;
+	timerIntervalID = setInterval(updateTimer, 1000);
 
+	cardSelected1 = undefined;
+	cardSelected2 = undefined;
+	cardsFound = 0;
+
+	//reset cards
+	let allCards = document.querySelectorAll(".card-container");
+	console.log(allCards);
+	for(let i = 0; i < allCards.length; i++) {
+		let cardClasses = allCards[i].classList;
+		if(cardClasses[1] !== "back") {
+			allCards[i].classList.toggle(cardClasses[1]);
+			allCards[i].classList.toggle("back");
+		}
+	}
+
+	loadCards();
 }
 
 // load the cards array with the images
 loadCards();
-// update timer every 1 second
-let timerIntervalID = setInterval(updateTimer, 1000);
 
 // -------------------------------------------------- Event listeners and handlers
 main.addEventListener("click", function(event) {
@@ -107,8 +127,6 @@ main.addEventListener("click", function(event) {
 	if(element.classList.contains("card-container") &&
 		element.classList.contains("back") &&
 		cardsFound < 8 && noMatch === false) {
-
-		//if(noMatch) { clearLastTwo(); }
 
 		// turn the card and store a reference to that element in ref1 or ref2
 		const row = event.target.id.split("_");
