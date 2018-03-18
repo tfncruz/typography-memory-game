@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     font-family: verdana, sans-serif;
     font-size: 0.8em;
+	color: #cecece;
 }
 
 header {
@@ -10,7 +11,6 @@ header {
     max-width: 800px;
     margin: auto;
     padding: 2em 3px 0 3px;
-    color: #cecece;
 }
 
 main {
@@ -26,8 +26,6 @@ main {
 #timer, #move-counter, #stars {
 	display: inline;
 }
-
-#modal-popup { display: none; }
 
 .row {
 	display: flex;
@@ -56,3 +54,22 @@ main {
 .image6 { background-image: url("../imgs/img6.svg"); background-size: 100%; }
 .image7 { background-image: url("../imgs/img7.svg"); background-size: 100%; }
 .image8 { background-image: url("../imgs/img8.svg"); background-size: 100%; }
+
+#modal-popup {
+	position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #ffffff; /* fallback */
+	background-color: rgb(255,255,255,0.4);
+	display: none;
+}
+
+#popup-content {
+	width: 50%;
+	height: 50%;
+	padding-top: 50%;
+	margin: auto;
+}
