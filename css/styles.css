@@ -78,14 +78,32 @@ h1 { color: #404040; }
 }
 
 #popup-content p {
-	color: #ff9900;
+	color: #fc6f3c;
 }
 
 #stars-rating {
 	font-size: 5em;
-	margin-top: 0;
+	margin: 0;
 }
 
 #time-spent, #moves-spent { display: inline; }
 
-#play-again-btn { display: block; margin-top: 1em; }
+/* play-again-btn generated with http://css3buttongenerator.com/ */
+#play-again-btn {
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  color: #fc6f3c;
+  font-size: 1em;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  border: solid #fc6f3c 1px;
+  text-decoration: none;
+  display: block;
+  margin-top: 5em;
+}
+
+#play-again-btn:hover {
+  background: #ffdfc7;
+  text-decoration: none;
+}
