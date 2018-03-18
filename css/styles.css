@@ -27,6 +27,8 @@ main {
 	display: inline;
 }
 
+#modal-popup { display: none; }
+
 .row {
 	display: flex;
 	flex-wrap: wrap;
