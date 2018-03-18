@@ -123,12 +123,13 @@ h1 { color: #404040; }
 /* play-again-btn and reset-btn generated with http://css3buttongenerator.com/ */
 #reset-btn {
   color: #fc6f3c;
-  font-size: 10px;
+  font-size: 1em;
   background: #ffffff;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 5px 5px 5px;
   border: solid #fc6f3c 1px;
   text-decoration: none;
   margin: 0.5em 3px;
+  width: calc(25% - 6px);
 }
 
 #reset-btn:hover {
