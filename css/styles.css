@@ -123,9 +123,9 @@ h1 { color: #404040; }
 /* play-again-btn and reset-btn generated with http://css3buttongenerator.com/ */
 #reset-btn {
   color: #fc6f3c;
-  font-size: 1em;
+  font-size: 0.8em;
   background: #ffffff;
-  padding: 5px 5px 5px 5px;
+  padding: 5px 0;
   border: solid #fc6f3c 1px;
   text-decoration: none;
   margin: 0.5em 3px;
@@ -151,4 +151,12 @@ h1 { color: #404040; }
 #play-again-btn:hover {
   background: #ffdfc7;
   text-decoration: none;
+}
+
+/* RESPONSIVE RULES */
+@media screen and (min-width: 500px) {
+	#reset-btn {
+		font-size: 1em;
+		padding: 10px 0;
+	}
 }
