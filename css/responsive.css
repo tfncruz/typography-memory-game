@@ -1,7 +1,16 @@
 /* ------------------------- RESPONSIVE RULES ------------------------ */
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 425px) {
+	#reset-btn {
+		padding: 10px 0;
+	}
+
+	#popup-content {
+		width: 60%;
+	}
+}
+
+@media screen and (min-width: 550px) {
 	#reset-btn {
 		font-size: 1em;
-		padding: 10px 0;
 	}
 }

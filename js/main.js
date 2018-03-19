@@ -305,7 +305,7 @@ lastTenSubmitBtn.addEventListener("click", function() {
 		let tds = "<td>"+timer.innerText+
 		"</td><td>"+stars.innerText+
 		"</td><td>"+moves+
-		" moves - </td><td>"+user+"</td>";
+		" moves</td><td>"+user+"</td>";
 
 		localStorage.setItem(user+"_"+Date.now(), tds);
 

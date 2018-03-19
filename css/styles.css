@@ -38,6 +38,7 @@ main {
 
 h1 {
 	color: #404040;
+	font-size: 1.2em;
 	margin-top: 2em;
 }
 
@@ -105,29 +106,39 @@ h1 {
 }
 
 #popup-content {
-	width: 33%;
-	height: 50%;
+	width: 90%;
 	margin: auto;
-}
-
-#last-ten-submit { margin-top: 1em; }
-
-#last-ten-submit input {
-	height: 2em;
-	margin-top: 0.5em;
-}
-
-#last-ten-submit-btn {
-	color: #fc6f3c;
-  	font-size: 1em;
-  	background: #ffffff;
-  	padding: 6px 10px;
-  	border: solid #fc6f3c 1px;
-  	text-decoration: none;
 }
 
 #popup-content p {
 	color: #fc6f3c;
+}
+
+#last-ten-list td {
+	border-bottom: 1px solid #cecece;
+}
+
+#last-ten-submit { margin-top: 1em; }
+
+#last-ten-username {
+	height: 2em;
+	margin-top: 0.6em;
+	border: 1px solid #cecece;
+	float: left;
+}
+
+#last-ten-submit label {
+	display: block;
+}
+
+#last-ten-submit-btn {
+	color: #fc6f3c;
+  	font-size: 0.8em;
+  	background: #ffffff;
+  	padding: 6px 10px;
+  	border: solid #fc6f3c 1px;
+  	text-decoration: none;
+  	margin: 0.9em;
 }
 
 #stars-rating {
@@ -164,7 +175,7 @@ h1 {
 
 #play-again-btn {
   color: #fc6f3c;
-  font-size: 1em;
+  font-size: 0.8em;
   background: #ffffff;
   padding: 10px 20px;
   border: solid #fc6f3c 1px;
