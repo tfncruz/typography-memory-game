@@ -13,14 +13,37 @@
 	<link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
+
+	<!-- only visible in the end of the game -->
 	<section id="modal-popup" class="hidden">
-		<div id="popup-content">
+
+		<section id="popup-content">
+
+			<!-- last ten games -->
+			<section id="last-ten">
+
+				<h1>Last 10</h1>
+
+				<!-- filled by main.js -->
+				<table id="last-ten-list">
+				</table>
+
+				<!-- visible if top 10 scores -->
+				<div id="last-ten-submit">
+					<label>add you name to the last ten list</label>
+					<input id="last-ten-username" type="text">
+					<button id="last-ten-submit-btn">submit</button>
+					<span class="validation-msg"></span>
+				</div>
+			</section>
+
 			<h1>you won!</h1>
 			<p id="stars-rating"></p>
 			<p id="time-spent"></p>
 			<p id="moves-spent"></p>
 			<button id="play-again-btn">play again</button>
-		</div>
+
+		</section>
 	</section>
 
 	<header>
@@ -30,6 +53,7 @@
 		<button id="reset-btn">I'm feeling lucky</button>
 	</header>
 
+	<!-- CARDS -->
 	<main>
 		<section id="row1" class="row">
 			<section id="card_1" class="card-container back"></section>

@@ -36,7 +36,10 @@ main {
     margin: auto;
 }
 
-h1 { color: #404040; }
+h1 {
+	color: #404040;
+	margin-top: 2em;
+}
 
 #timer, #move-counter, #stars {
 	display: inline;
@@ -104,8 +107,23 @@ h1 { color: #404040; }
 #popup-content {
 	width: 33%;
 	height: 50%;
-	padding-top: 10vw;
 	margin: auto;
+}
+
+#last-ten-submit { margin-top: 1em; }
+
+#last-ten-submit input {
+	height: 2em;
+	margin-top: 0.5em;
+}
+
+#last-ten-submit-btn {
+	color: #fc6f3c;
+  	font-size: 1em;
+  	background: #ffffff;
+  	padding: 6px 10px;
+  	border: solid #fc6f3c 1px;
+  	text-decoration: none;
 }
 
 #popup-content p {
@@ -131,28 +149,31 @@ h1 { color: #404040; }
   width: calc(25% - 6px);
 }
 
-#reset-btn:hover {
+#last-ten-submit-btn:hover, #reset-btn:hover, #play-again-btn:hover {
   background: #ffdfc7;
   text-decoration: none;
+}
+
+.validation-msg {
+	font-size: 1em;
+	color: #fc6f3c;
+	display: block;
+	padding-top: 1em;
+	font-style: italic;
 }
 
 #play-again-btn {
   color: #fc6f3c;
   font-size: 1em;
   background: #ffffff;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   border: solid #fc6f3c 1px;
   text-decoration: none;
   display: block;
   margin-top: 5em;
 }
 
-#play-again-btn:hover {
-  background: #ffdfc7;
-  text-decoration: none;
-}
-
-/* RESPONSIVE RULES */
+/* ------------------------- RESPONSIVE RULES ------------------------ */
 @media screen and (min-width: 500px) {
 	#reset-btn {
 		font-size: 1em;

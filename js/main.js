@@ -5,6 +5,8 @@ const main = document.querySelector("main");
 */
 const modalPopup = document.querySelector("#modal-popup");
 const playAgainBtn = document.querySelector("#play-again-btn");
+const lastTen = document.querySelector("#last-ten");
+const lastTenSubmitBtn = document.querySelector("#last-ten-submit-btn");
 
 /*
 * header vars
@@ -155,6 +157,62 @@ function updateMoveCounter() {
 }
 
 /*
+* display last ten
+*/
+function displayLastTen() {
+
+	const lastTenList = document.querySelector("#last-ten-list");
+
+	//remove rows
+	while(lastTenList.firstChild) {
+		lastTenList.removeChild(lastTenList.firstChild);
+	}
+
+	let fragment = document.createDocumentFragment();
+
+    for(let i = 0; i < localStorage.length; i+=2) {
+    	let row = document.createElement("tr");
+    	row.innerHTML = localStorage.getItem(localStorage.key(i));
+
+    	fragment.appendChild(row);
+	}
+
+    lastTenList.appendChild(fragment);
+}
+
+/*
+* delete oldest entry in Last 10 list (modal popup)
+* the lowest number is the oldest
+*/
+function deleteOldestEntry() {
+	let user;
+	let old_value = undefined;
+	let old_index = undefined;
+
+	for(let i = 0; i < localStorage.length; i++) {
+		let tmp = localStorage.getItem(localStorage.key(i));
+
+		if(!tmp.includes("td")) {
+
+			if(old_value === undefined) {
+				old_value = tmp;
+				old_index = i;
+			}
+			else if(old_value > tmp) {
+				old_value = tmp;
+				old_index = i;
+			}
+		}
+	}
+
+	user = localStorage.key(old_index);
+	user = user.split("_");
+	localStorage.removeItem(user[0]);
+	localStorage.removeItem(user[0]+"_timestamp");
+
+}
+
+/*
 * load the cards array with the images
 */
 loadCards();
@@ -218,6 +276,10 @@ main.addEventListener("click", function(event) {
 			document.querySelector("#moves-spent").innerText = "with "+moves+" moves";
 			document.querySelector("#stars-rating").innerText = stars.innerText;
 
+			console.log(localStorage);
+
+			displayLastTen();
+
 			modalPopup.classList.toggle("hidden");
 		}
 	}
@@ -231,6 +293,34 @@ resetBtn.addEventListener("click", function(event) {
 playAgainBtn.addEventListener("click", function(event) {
 	modalPopup.classList.toggle("hidden");
 	resetGame();
+});
+
+lastTenSubmitBtn.addEventListener("click", function() {
+	let user = document.querySelector("#last-ten-username").value;
+
+	//clear the field
+	document.querySelector("#last-ten-username").value = "";
+
+	// don't allow empty string
+	if(user != "") {
+
+		user.trim();
+
+		let tds = "<td>"+timer.innerText+
+		"</td><td>"+stars.innerText+
+		"</td><td>"+moves+
+		" moves - </td><td>"+user+"</td>";
+
+		localStorage.setItem(user, tds);
+		localStorage.setItem(user+"_timestamp", Date.now());
+
+		if(localStorage.length > 20) deleteOldestEntry();
+
+		displayLastTen();
+	} else {
+		const validationMsg = document.querySelector(".validation-msg");
+		validationMsg.innerText = "please provide a valid name";
+	}
 });
 
 
