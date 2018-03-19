@@ -170,7 +170,7 @@ function displayLastTen() {
 
 	let fragment = document.createDocumentFragment();
 
-    for(let i = 0; i < localStorage.length; i+=2) {
+    for(let i = 0; i < localStorage.length; i++) {
     	let row = document.createElement("tr");
     	row.innerHTML = localStorage.getItem(localStorage.key(i));
 
@@ -185,31 +185,28 @@ function displayLastTen() {
 * the lowest number is the oldest
 */
 function deleteOldestEntry() {
-	let user;
 	let old_value = undefined;
 	let old_index = undefined;
 
+	// go throught the localStorage and find the lowest timestamp
+	// that is attached to the name (separated by "_")
 	for(let i = 0; i < localStorage.length; i++) {
-		let tmp = localStorage.getItem(localStorage.key(i));
 
-		if(!tmp.includes("td")) {
+		// tmp[1] will have the timestamp
+		let tmp = localStorage.key(i).split("_");
 
-			if(old_value === undefined) {
-				old_value = tmp;
-				old_index = i;
-			}
-			else if(old_value > tmp) {
-				old_value = tmp;
-				old_index = i;
-			}
+		// if it is undefined/lower than the old value saved, substitute
+		if(old_value === undefined) {
+			old_value = tmp[1];
+			old_index = i;
+
+		} else if(old_value > tmp[1]) {
+			old_value = tmp[1];
+			old_index = i;
 		}
 	}
 
-	user = localStorage.key(old_index);
-	user = user.split("_");
-	localStorage.removeItem(user[0]);
-	localStorage.removeItem(user[0]+"_timestamp");
-
+	localStorage.removeItem(localStorage.key(old_index));
 }
 
 /*
@@ -276,11 +273,10 @@ main.addEventListener("click", function(event) {
 			document.querySelector("#moves-spent").innerText = "with "+moves+" moves";
 			document.querySelector("#stars-rating").innerText = stars.innerText;
 
-			console.log(localStorage);
-
 			displayLastTen();
 
 			modalPopup.classList.toggle("hidden");
+			document.querySelector("#last-ten-submit").classList.remove("hidden");
 		}
 	}
 });
@@ -311,12 +307,15 @@ lastTenSubmitBtn.addEventListener("click", function() {
 		"</td><td>"+moves+
 		" moves - </td><td>"+user+"</td>";
 
-		localStorage.setItem(user, tds);
-		localStorage.setItem(user+"_timestamp", Date.now());
+		localStorage.setItem(user+"_"+Date.now(), tds);
 
-		if(localStorage.length > 20) deleteOldestEntry();
+		if(localStorage.length > 10) deleteOldestEntry();
 
 		displayLastTen();
+
+		// prevent from adding more than one entry
+		document.querySelector("#last-ten-submit").classList.add("hidden");
+
 	} else {
 		const validationMsg = document.querySelector(".validation-msg");
 		validationMsg.innerText = "please provide a valid name";
