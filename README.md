@@ -20,14 +20,9 @@ Developed in HTML/CSS and Javascript
 [Hero Patterns](http://heropatterns.com) for the back of the cards
 [CSS3 Button Generator](http://css3buttongenerator.com/) for the reset buttons
 
-### Contributing
-Please, feel free to clone the repository
-
 ### License
-![cc commons]
-(https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png)
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License]
-(http://creativecommons.org/licenses/by-nc-sa/4.0/)
+[cc commons](https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png)
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### Have fun!
 
