@@ -1,0 +1,7 @@
+/* ------------------------- RESPONSIVE RULES ------------------------ */
+@media screen and (min-width: 500px) {
+	#reset-btn {
+		font-size: 1em;
+		padding: 10px 0;
+	}
+}
