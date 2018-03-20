@@ -148,7 +148,7 @@ function resetGame() {
 function updateMoveCounter() {
 	++moves;
 
-	if(moves > 16) stars.innerText = "**";
+	if(moves > 16 && moves <= 24) stars.innerText = "**";
 	else if(moves > 24) stars.innerText = "*";
 
 	if(moves < 10) moveCounter.innerText = "00"+moves;
