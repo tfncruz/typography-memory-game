@@ -277,7 +277,7 @@ main.addEventListener("click", function(event) {
 
 			modalPopup.classList.toggle("hidden");
 
-			// prevent adding a new entry to the last 10 list
+			// allow a new entry to the last 10 list
 			document.querySelector(".last-ten-submit").classList.remove("hidden");
 		}
 	}
@@ -327,6 +327,10 @@ lastTenSubmitBtn.addEventListener("click", function() {
 		document.querySelector(".last-ten-submit").classList.add("hidden");
 
 	} else document.querySelector(".validation-msg").innerText = "please provide a valid name";
+});
+
+document.querySelector(".close-modal").addEventListener("click", function() {
+	modalPopup.classList.toggle("hidden");
 });
 
 
