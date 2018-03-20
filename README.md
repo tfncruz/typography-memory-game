@@ -25,9 +25,9 @@ Although the game is available online [here](https://tfncruz.github.io/typograph
 * enjoy!
 
 ### Resources
-[Hero Patterns](http://heropatterns.com) for the back of the cards
-[CSS3 Button Generator](http://css3buttongenerator.com/) for the reset buttons
-[Normalize](https://necolas.github.io/normalize.css/) for css reset
+* [Hero Patterns](http://heropatterns.com) for the back of the cards
+* [CSS3 Button Generator](http://css3buttongenerator.com/) for the reset buttons
+* [Normalize](https://necolas.github.io/normalize.css/) for css reset
 
 ### License
 [cc commons](https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png)
