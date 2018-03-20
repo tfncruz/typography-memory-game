@@ -168,16 +168,46 @@ function displayLastTen() {
 		lastTenList.removeChild(lastTenList.firstChild);
 	}
 
+	// get last ten ordered by time (lowest first)
+	let orderedLastTen = getOrderedLastTen();
+
+	// build fragment
 	let fragment = document.createDocumentFragment();
 
-    for(let i = 0; i < localStorage.length; i++) {
+    for(let i = 0; i < orderedLastTen.length; i++) {
     	let row = document.createElement("tr");
-    	row.innerHTML = localStorage.getItem(localStorage.key(i));
+    	row.innerHTML = localStorage.getItem(localStorage.key(orderedLastTen[i].index));
 
     	fragment.appendChild(row);
 	}
 
     lastTenList.appendChild(fragment);
+}
+
+/*
+* get ordered (by lowest time first) last 10 array of objects
+*/
+function getOrderedLastTen() {
+	const lastTen = new Array();
+
+	for(let i = 0; i < localStorage.length; i++) {
+		let time = localStorage.getItem(localStorage.key(i)).match(/[0-9][0-9]:[0-9][0-9]/);
+		lastTen[i] = { index: i, time: time[0] };
+	}
+
+	// order the array by time (less first)
+	for(let i = 0; i < lastTen.length-1; i++) {
+		for(let j = i+1; j < lastTen.length; j++) {
+			if(lastTen[j].time < lastTen[i].time) {
+				let tmp = lastTen[j];
+				lastTen[j] = lastTen[i];
+				lastTen[i] = tmp;
+			}
+		}
+	}
+
+	// return array of object holding the index and the time
+	return lastTen;
 }
 
 /*
