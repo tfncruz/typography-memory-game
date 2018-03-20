@@ -1,4 +1,5 @@
 # TYPOGRAPHIC MEMORY GAME
+[play it online](https://tfncruz.github.io/typography-memory-game/)
 
 ### Author
 Tiago Cruz
@@ -17,7 +18,11 @@ In the end, after you find all the eight pairs, the game will show you not just 
 Developed in HTML/CSS and Javascript
 
 ### Installation
-No installation required. The game is available online [here](https://tfncruz.github.io/typography-memory-game/).
+Although the game is available online [here](https://tfncruz.github.io/typography-memory-game/), you can install it on your computer and play offline. To accomplish this:
+* download the repository to a folder on your hardrive
+* unzip it
+* located inside the unzipped folder, open index.html with you favourite browser
+* enjoy!
 
 ### Resources
 [Hero Patterns](http://heropatterns.com) for the back of the cards
