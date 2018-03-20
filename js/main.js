@@ -3,25 +3,25 @@ const main = document.querySelector("main");
 /*
 * modal popup vars
 */
-const modalPopup = document.querySelector("#modal-popup");
-const playAgainBtn = document.querySelector("#play-again-btn");
-const lastTen = document.querySelector("#last-ten");
-const lastTenSubmitBtn = document.querySelector("#last-ten-submit-btn");
+const modalPopup = document.querySelector(".modal-popup");
+const playAgainBtn = document.querySelector(".play-again-btn");
+const lastTen = document.querySelector(".last-ten");
+const lastTenSubmitBtn = document.querySelector(".last-ten-submit-btn");
 
 /*
 * header vars
 */
-const resetBtn = document.querySelector("#reset-btn");
+const resetBtn = document.querySelector(".reset-btn");
 
-const timer = document.querySelector("#timer");
+const timer = document.querySelector(".timer");
 let seconds = 0;
 let minutes = 0;
 let timerIntervalID = setInterval(updateTimer, 1000);
 
-const moveCounter = document.querySelector("#move-counter");
+const moveCounter = document.querySelector(".move-counter");
 let moves = 0;
 
-const stars = document.querySelector("#stars");
+const stars = document.querySelector(".stars");
 
 /*
 * cards vars
@@ -161,7 +161,7 @@ function updateMoveCounter() {
 */
 function displayLastTen() {
 
-	const lastTenList = document.querySelector("#last-ten-list");
+	const lastTenList = document.querySelector(".last-ten-list");
 
 	//remove rows
 	while(lastTenList.firstChild) {
@@ -269,16 +269,16 @@ main.addEventListener("click", function(event) {
 			// stop timer
 			clearInterval(timerIntervalID);
 
-			document.querySelector("#time-spent").innerText = "in "+timer.innerText;
-			document.querySelector("#moves-spent").innerText = "with "+moves+" moves";
-			document.querySelector("#stars-rating").innerText = stars.innerText;
+			document.querySelector(".time-spent").innerText = "in "+timer.innerText;
+			document.querySelector(".moves-spent").innerText = "with "+moves+" moves";
+			document.querySelector(".stars-rating").innerText = stars.innerText;
 
 			displayLastTen();
 
 			modalPopup.classList.toggle("hidden");
 
 			// prevent adding a new entry to the last 10 list
-			document.querySelector("#last-ten-submit").classList.remove("hidden");
+			document.querySelector(".last-ten-submit").classList.remove("hidden");
 		}
 	}
 });
@@ -300,10 +300,10 @@ playAgainBtn.addEventListener("click", function() {
 * (last 10 submit button) listener for a click and handler
 */
 lastTenSubmitBtn.addEventListener("click", function() {
-	let user = document.querySelector("#last-ten-username").value;
+	let user = document.querySelector(".last-ten-username").value;
 
 	//clear the field
-	document.querySelector("#last-ten-username").value = "";
+	document.querySelector(".last-ten-username").value = "";
 
 	// don't allow empty string
 	if(user !== "") {
@@ -324,7 +324,7 @@ lastTenSubmitBtn.addEventListener("click", function() {
 		displayLastTen();
 
 		// prevent from adding more than one entry
-		document.querySelector("#last-ten-submit").classList.add("hidden");
+		document.querySelector(".last-ten-submit").classList.add("hidden");
 
 	} else document.querySelector(".validation-msg").innerText = "please provide a valid name";
 });
