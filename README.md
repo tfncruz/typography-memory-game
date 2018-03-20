@@ -16,9 +16,13 @@ In the end, after you find all the eight pairs, the game will show you not just 
 
 Developed in HTML/CSS and Javascript
 
+### Installation
+No installation required. The game is available online [here](https://tfncruz.github.io/typography-memory-game/).
+
 ### Resources
 [Hero Patterns](http://heropatterns.com) for the back of the cards
 [CSS3 Button Generator](http://css3buttongenerator.com/) for the reset buttons
+[Normalize](https://necolas.github.io/normalize.css/) for css reset
 
 ### License
 [cc commons](https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png)
