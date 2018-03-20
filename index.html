@@ -24,11 +24,11 @@
 
 				<h1>Last 10</h1>
 
-				<!-- filled by main.js -->
+				<!-- filled by main.js last 10 entries -->
 				<table id="last-ten-list">
 				</table>
 
-				<!-- visible if top 10 scores -->
+				<!-- submit score form -->
 				<div id="last-ten-submit">
 					<label>add you name to the last 10 list</label>
 					<input id="last-ten-username" type="text">
@@ -37,6 +37,7 @@
 				</div>
 			</section>
 
+			<!-- winning message and stats -->
 			<h1>you won!</h1>
 			<p id="stars-rating"></p>
 			<p id="time-spent"></p>
@@ -46,6 +47,7 @@
 		</section>
 	</section>
 
+	<!-- HEADER -->
 	<header>
 		<div id="timer">00:00</div>
 		<div id="move-counter">000</div>
@@ -53,7 +55,7 @@
 		<button id="reset-btn">I'm feeling lucky</button>
 	</header>
 
-	<!-- CARDS -->
+	<!-- CARDS GRID -->
 	<main>
 		<section id="row1" class="row">
 			<section id="card_1" class="card-container back"></section>
@@ -84,7 +86,9 @@
 		</section>
 	</main>
 
+	<!-- FOOTER -->
 	<footer><p>Copyright &copy; 2018 Tiago Cruz</p></footer>
+
 
 	<script src="./js/main.js"></script>
 	<script src="http://localhost:35729/livereload.js"></script>

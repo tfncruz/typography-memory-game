@@ -1,22 +1,14 @@
 /* ------------------------- RESPONSIVE RULES ------------------------ */
 @media screen and (min-width: 425px) {
-	#reset-btn {
-		padding: 10px 0;
-	}
+	#reset-btn { padding: 10px 0; }
 
-	#popup-content {
-		width: 60%;
-	}
+	#popup-content { width: 60%; }
 }
 
 @media screen and (min-width: 550px) {
-	#reset-btn {
-		font-size: 1em;
-	}
+	#reset-btn { font-size: 1em; }
 }
 
 @media screen and (min-width: 1000px) {
-	#popup-content {
-		width: 500px;
-	}
+	#popup-content { width: 500px; }
 }

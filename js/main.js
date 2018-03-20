@@ -135,8 +135,8 @@ function resetGame() {
 
 	// reset moves and stars
 	moves = 0;
-	moveCounter.innerHTML = "000";
-	stars.innerHTML = "***";
+	moveCounter.innerText = "000";
+	stars.innerText = "***";
 
 	// load new cards in the cards array
 	loadCards();
@@ -148,12 +148,12 @@ function resetGame() {
 function updateMoveCounter() {
 	++moves;
 
-	if(moves > 16) stars.innerHTML = "**";
-	else if(moves > 24) stars.innerHTML = "*";
+	if(moves > 16) stars.innerText = "**";
+	else if(moves > 24) stars.innerText = "*";
 
-	if(moves < 10) moveCounter.innerHTML = "00"+moves;
-	else if(moves > 9 && moves < 100) moveCounter.innerHTML = "0"+moves;
-	else moveCounter.innerHTML = moves;
+	if(moves < 10) moveCounter.innerText = "00"+moves;
+	else if(moves > 9 && moves < 100) moveCounter.innerText = "0"+moves;
+	else moveCounter.innerText = moves;
 }
 
 /*
@@ -276,21 +276,29 @@ main.addEventListener("click", function(event) {
 			displayLastTen();
 
 			modalPopup.classList.toggle("hidden");
+
+			// prevent adding a new entry to the last 10 list
 			document.querySelector("#last-ten-submit").classList.remove("hidden");
 		}
 	}
 });
 
-resetBtn.addEventListener("click", function(event) {
-	event.preventDefault();
-	resetGame();
-});
+/*
+* (reset button) listener for a click and handler
+*/
+resetBtn.addEventListener("click", function() { resetGame(); });
 
-playAgainBtn.addEventListener("click", function(event) {
+/*
+* (play again button) listener for a click and handler
+*/
+playAgainBtn.addEventListener("click", function() {
 	modalPopup.classList.toggle("hidden");
 	resetGame();
 });
 
+/*
+* (last 10 submit button) listener for a click and handler
+*/
 lastTenSubmitBtn.addEventListener("click", function() {
 	let user = document.querySelector("#last-ten-username").value;
 
@@ -298,7 +306,7 @@ lastTenSubmitBtn.addEventListener("click", function() {
 	document.querySelector("#last-ten-username").value = "";
 
 	// don't allow empty string
-	if(user != "") {
+	if(user !== "") {
 
 		user.trim();
 
@@ -307,8 +315,10 @@ lastTenSubmitBtn.addEventListener("click", function() {
 		"</td><td>"+moves+
 		" moves</td><td>"+user+"</td>";
 
+		// save on localStorage the user + timestamp and table td(s)
 		localStorage.setItem(user+"_"+Date.now(), tds);
 
+		// if localStorage is more big than 10 entries, delete oldest
 		if(localStorage.length > 10) deleteOldestEntry();
 
 		displayLastTen();
@@ -316,10 +326,7 @@ lastTenSubmitBtn.addEventListener("click", function() {
 		// prevent from adding more than one entry
 		document.querySelector("#last-ten-submit").classList.add("hidden");
 
-	} else {
-		const validationMsg = document.querySelector(".validation-msg");
-		validationMsg.innerText = "please provide a valid name";
-	}
+	} else document.querySelector(".validation-msg").innerText = "please provide a valid name";
 });
 
 
