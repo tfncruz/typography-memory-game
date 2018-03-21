@@ -24,6 +24,9 @@ Although the game is available online [here](https://tfncruz.github.io/typograph
 * located inside the unzipped folder, open index.html with you favourite browser
 * enjoy!
 
+### How to play
+Flip over the cards (two at a time) to locate the ones that match until you find all the eight pairs.
+
 ### Resources
 * [Hero Patterns](http://heropatterns.com) for the back of the cards
 * [CSS3 Button Generator](http://css3buttongenerator.com/) for the reset buttons
